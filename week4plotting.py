@@ -145,9 +145,6 @@ fig = px.scatter(
 st.write(f"✅ Successes: {len(filtered_success)} / {len(success_scores)}")
 st.write(f"❌ Failures: {len(filtered_failure)} / {len(failure_scores)}")
 st.plotly_chart(fig)
-st.subheader("Filtered Scores")
-st.dataframe(filtered_df)
-
 
 # ---- Ratio vs. Threshold Line Graph ----
 thresholds = np.linspace(0, 1, 100)
@@ -178,3 +175,8 @@ ax2.set_xlabel("Score")
 ax2.set_ylabel("Count")
 ax2.legend()
 st.pyplot(fig2)
+
+# Table of filtered scores above the threshold
+
+st.subheader("Filtered Scores")
+st.dataframe(filtered_df)
